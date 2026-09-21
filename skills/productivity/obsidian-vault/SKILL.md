@@ -7,7 +7,7 @@ description: Search, create, and manage notes in the Obsidian vault with wikilin
 
 ## Vault location
 
-`/home/elijah/Documents/obsidian-vault/vault`
+`/home/elijah/Documents/vault`
 
 > Configurable via `OBSIDIAN_VAULT` env var. Defaults to your vault above. If moved, update the env var or this file.
 
@@ -31,10 +31,10 @@ Mostly flat at root level - adapt to your actual structure. Current vault has `.
 
 ```bash
 # Search by filename
-find "/home/elijah/Documents/obsidian-vault/vault" -name "*.md" | grep -i "keyword"
+find "/home/elijah/Documents/vault" -name "*.md" | grep -i "keyword"
 
 # Search by content
-grep -rl "keyword" "/home/elijah/Documents/obsidian-vault/vault" --include="*.md"
+grep -rl "keyword" "/home/elijah/Documents/vault" --include="*.md"
 ```
 
 Or use Grep/Glob tools directly on the vault path.
@@ -45,23 +45,23 @@ Or use Grep/Glob tools directly on the vault path.
 2. Write content as a unit of learning
 3. Add `[[wikilinks]]` to related notes at the bottom
 4. If part of a numbered sequence, use the hierarchical numbering scheme
-5. Write to `/home/elijah/Documents/obsidian-vault/vault/<Title>.md`
+5. Write to `/home/elijah/Documents/vault/<Title>.md`
 
 ### Find related notes
 
 Search for `[[Note Title]]` across the vault to find backlinks:
 
 ```bash
-grep -rl "\[\[Note Title\]\]" "/home/elijah/Documents/obsidian-vault/vault"
+grep -rl "\[\[Note Title\]\]" "/home/elijah/Documents/vault"
 ```
 
 ### Find index notes
 
 ```bash
-find "/home/elijah/Documents/obsidian-vault/vault" -name "*Index*"
+find "/home/elijah/Documents/vault" -name "*Index*"
 ```
 
 ## Setup
 
-- Vault lives at `/home/elijah/Documents/obsidian-vault/vault`
-- Override with: `export OBSIDIAN_VAULT="/home/elijah/Documents/obsidian-vault/vault"`
+- Vault lives at `/home/elijah/Documents/vault`
+- Override with: `export OBSIDIAN_VAULT="/home/elijah/Documents/vault"`
